@@ -234,57 +234,136 @@ Navbar Code End
 main {
 padding: 30px;
 }
-/* -----
-==============
-Landing========
-=============
------- */
-.landing {
+/* -----------
+======================
+HERO SECTION
+======================
+------------ */
+.hero-landing {
+  position: relative;
+  height: calc(100vh - var(--header-height-m));
+  background-color: var(--clr-hero);
+  width: 100%;
+  padding: 120px 40px;
+  margin-top: 0px;
+}
 
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			width: 100%;
-			color: #fff;
-			text-align: center;
-		}
-		.landing h1 {
-			font-size: 10vw;
-			font-weight: 1000;
-			margin: 0;
-			padding: 0;
-			line-height: 1;
-		}
-		.landing p {
-		    color: #b3b3b3;
-			font-size: 20px;
-			margin: 0;
-			padding: 2rem 0;
-			max-width: 700px;
-		}
-		.landing button {
-			font-size: 20px;
-			background-color: #fff;
-			box-shadow: 0px 0px 8px 3px #fff;
-			border: none;
-			border-radius: 5px;
-			padding: 0.7rem 1rem;
-			display: inline;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-		.landing button:hover {
-			background-color: #333333;
-			color: #ffffff;
-		}
+@media screen and (min-width: 40em) {
+  .hero-landing {
+    height: calc(100vh - var(--header-height-d));
+    background-color: transparent;
+  }
+}
 
+/* Hero container */
+.hero-landing .hero__container {
+  height: 80%;
+  flex-direction: column;
+  justify-content: center;
+}
 
+@media screen and (min-width: 40em) {
+  .hero-landing .hero__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+.hero-landing .hero__text .large{
+  width: min(46.125rem, 100%);
+  color: #eee;
+  font-size: 11vw;
+  font-weight: 1000;
+  text-shadow: 0px 0px 8px 3px #9c2be7;
+  opacity: 1; filter: #9c2be7;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 6vw + 0.5rem, var(--fs-biggest));
+  margin-bottom: 0.8rem;
+}
+
+.hero-landing .hero__title-underline {
+  border-bottom: 0.25rem solid var(--clr-red);
+}
+
+.hero-landing.hero__paragraph {
+  margin-bottom: 1rem;
+}
+
+.hero-landing .hero__image-wrapper {
+background: rgb(246,246,247);
+background: radial-gradient(circle, rgba(246,246,247,0.025647759103641476) 0%, rgba(255,179,26,1) 0%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 44%);
+  display: none;
+  float: right;
+}
+
+@media screen and (min-width: 40em) {
+  .hero-landing .hero__image-wrapper {
+  background: rgb(246,246,247);
+background: radial-gradient(circle, rgba(246,246,247,0.025647759103641476) 0%, rgba(255,179,26,1) 0%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 44%);
+    display: block;
+  }
+}
+
+.hero-landing .hero__image {
+  background: rgb(246,246,247);
+background: radial-gradient(circle, rgba(246,246,247,0.025647759103641476) 0%, rgba(255,179,26,1) 0%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 44%);
+  width: 40%;
+  float: right;
+}
+
+/*  --typing effect--  */
+#spin {
+  color: ;
+  font-size: ;
+  font-weight: ;
+  text-shadow: 0px 0px 8px 3px #9c2be7;
+  opacity: 1; filter: #9c2be7;
+}
+
+#spin:after {
+  content:"";
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  0% { content:"Arts";}
+  10% { content:"Architecture";}
+  20% { content:"Biological";}
+  30% { content:"Cartographic";}
+  40% { content:"Configuration";}
+  50% { content: "Communication";}
+  60% { content: "Costume";}
+  70% { content: "management";}
+  80% { content: "Engineering";}
+  90% { content: "Experience";}
+
+  100% { content:"Fashion";}
+  110% { content:"Floral";}
+  120% { content:"Game";}
+  130% { content:"Graphic";}
+  140% { content:"Information";}
+  150% { content: "Industrial";}
+  160% { content: "Instructional";}
+  170% { content: "Interaction";}
+  180% { content: "Interior";}
+  190% { content: "Landscape";}
+}
+/*  --/tping effect--  */
+
+/* --- Our mission ----- */
+.hero-mission {
+background: transparent;
+color: inherit;
+width: 100%;
+font-size: 20px;
+margin-bottom: 25px;
+}
 
 .devs-invs-links {
 display: inline-block;
-font-family: ;
 }
 
 .devs-invs-div {
@@ -294,46 +373,214 @@ margin-left: 30px;
 
 
 /* link-... */
-.link-devs  {
-    background-color: var(--goldenrodColor);
-    border: 2px solid var(--goldenrodColor);
-    border: none;
-    border-radius: 5px;
-    color: #000;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px 15px;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-  }
+.link-devs {
+  background: var(--goldenrodColor);
+  border: 1px solid var(--goldenrodColor);
+  border-radius: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  padding: 6px 20px;
+  transition: .1s;
+  text-decoration: none;
+  display: inline-block;
+}
 
-  .link-devs:hover {
-    background-color: #fff;
-    color: #2c3e50;
-    border: 2px solid #2c3e50;
-  }
-
+.link-devs:hover,
+.link-devs:focus {
+  transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem var(--shadow-2);
+  text-decoration: none;
+}
 
 /* link-... */
-  .link-invs  {
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--iconColor);
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px 15px;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
+.link-invs {
+  background: transparent;
+  border: 2px solid #292929;
+  border-radius: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  color: #f1f1f1;
+  padding: 6px 25px;
+  transition: .2s;
+  margin-left: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.link-invs:hover,
+.link-invs:focus {
+  transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem var(--shadow-2);
+  text-decoration: none;
+}
+/* -----------
+======================
+HERO SECTION
+======================
+------------ */
+
+	
+	
+	
+	
+
+/* -----------
+======================
+ABOUT SECTION
+======================
+------------ */
+.about {
+background: #eee;
+width: 100%;
+padding: 30px;
+float: center;
+text-align: center;
+padding-top: rem;
+}
+.about .header-text {
+color: ;
+font-size: 30px;
+ letter-spacing: -0.1px;
+font-weight: 1000;
+text-align: center;
+line-height: 5.5vw;
+margin-left: rem;
+margin-right: rem;
+}
+
+.about .descr-text {
+text-align: center;
+float: center;
+width: 100%;
+margin-top: px;
+}
+/* ------ */
+.about .descr-text {
+color: #0d0d0d;
+font-size: 19px;
+text-align: center;
+float: center;
+margin-left: 10px;
+margin-right: 10px;
+}
+
+
+/* Float four columns side by side */
+.about .column {
+  background-color: none;
+  float: left;
+  width: 50%;
+}
+
+/* Remove extra left and right margins, due to padding */
+.about .row {
+background-color: #eee;
+margin: 0 5px;
+}
+
+/* Clear floats after the columns */
+.about .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .about .column {
+    background-color: #eee;
+    width: 100%;
+    display: block;
+    margin-bottom: 0px;
   }
+}
 
-  .link-invs:hover {
-    background-color: #fff;
-    color: #2c3e50;
-    border: 2px solid #2c3e50;
-  }
+/* Style the counter cards */
+.about .card {
+  background-color: none;
+  text-align: center;
+}
 
+.total-number {
+color: var(--payment-button);
+font-size: 22px;
+font-weight: bold;
+}
 
+/* ---------------- */
+/* Create two equal columns that floats next to each other */
+.about .column-row {
+  background-color: #eee;
+  float: left;
+  width: 50%;
+  padding: 5px;
+  height: 110px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.about .row-columns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.about .categories {
+background: var(--backgroundFirst);
+padding: 15px;
+font-size: 17px;
+font-weight: 300;
+position: relative;
+cursor: pointer;
+color: var(--backgroundThird);
+}
+
+.about .note-text {
+  text-align: center;
+  font-size: 21px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 3;
+  width: 70%;
+}
+
+/* ------- */
+/* link-... */
+.about a {
+  background: ;
+  border: 2px solid var(--goldenrodColor);
+  border-radius: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  padding: 4px 25px;
+  margin-top: 30px;
+  transition: .1s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.about .link-devs:hover,
+.about .link-devs:focus {
+  transform: translateY(-.2rem);
+  box-shadow: 0 0 4.4rem .2rem var(--shadow-2);
+  text-decoration: none;
+}
+/* -----------
+======================
+ABOUT SECTION
+======================
+------------ */
+	
+	
+	
+	
+	
+	
 
 
 .two-main {
@@ -344,6 +591,10 @@ width: 100%;
 
 
 
+	
+	
+	
+	
 
 
 
@@ -1435,19 +1686,40 @@ footer .bottom-details .bottom_text{
 
 
 
-<section id="graphpaper" class="landing">
-		<h1>Design Bridge</h1>
-		<p>
-          Designtralized is an open decentralized design platform that aims
-    to revolutionize the <span id="spin"></span> design industry by providing a comprehensive
+<!---- HERO SECTION ---->
+<section class="hero-landing">
+    <div class="hero__container container container--px flex">
+      <div class="hero__text">
+          <span class="header-text" style="color: ; font-size: 25px;">
+              <text style="border-left: 1px solid #ffb31a; border-right: 1px solid #ffb31a; color: #fff; padding: 3px 10px;">Create</text>
+            <span id="spin"></span> <text style="color: #ffb31a;">Design</text>
+          </span>
+ <!---- Typing Effect HTML (1) ---->
+        <span class="large">Revolution</span>
+<!---- /Typing Effect HTML (1) ---->
+<!---- Our Mission (1) ---->
+<p class="hero-mission">
+    Designtralized is an open decentralized design platform that aims
+    to revolutionize the design industry by providing a comprehensive
     ecosystem for designers, design firms, and clients.
-        </p>
-         <div>
-    <a href="#" class="link-devs">Designpaper</a><!------Empty ID----->
-    <a href="#" class="link-invs">Buy Token</a>
-     </div>
-	</section>
+</p>
+<!---- /Our Mission (1) ---->
 
+<!---- Modal Buttons & items (1) ---->
+     <div>
+    <a href="#m3-2" class="link-devs">Graphpaper &darr;</a><!------Empty ID----->
+    <a href="#m3-1" class="link-invs">Join Studio &rarr;</a>
+     </div>
+      </div>
+<!---- /Modal Buttons & items (1) ---->
+
+<!----- line between note and hero img ----->
+      <div class="hero__image-wrapper">
+
+  </div>
+      </div>
+    </section>
+<!---- /HERO SECTION ---->
 
 
 
@@ -1471,6 +1743,133 @@ Adverts Section
 
 
 
+	
+	
+	
+<!-----
+==================
+ABOUT Code
+==================
+------->
+ <section class="about">
+     <div class="header-large">
+  <h1 class="center-header" style="font-size: 30px; color: inherit;">Open
+      <span style="color: #000000; padding: 2px 10px; border-left: 2px solid #ffb31a; border-right: 2px solid #ffb31a;">Internet</span>
+     Bridge Built For Designers
+  </h1>
+</div>
+      <!-----------
+======================
+Ecosystem Code
+======================
+------------->
+<div class="row">
+  <div class="column">
+    <div class="card">
+<!------------Begin-------------->
+        <div class="row-columns">
+  <div class="column-row">
+      <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M298.3 182.2C285.5 188.5 271.2 192 255.1 192C240.8 192 226.5 188.5 213.7 182.2L142.2 307.4C176.1 325.6 214.8 336 255.1 336C344.8 336 422.4 287.8 463.9 215.1C468.3 208.3 478.1 205.7 485.8 210.2C493.4 214.6 496 224.4 491.6 232C444.6 313.3 356.7 368 255.1 368C209 368 164.9 356.1 126.3 335.2L29.89 503.9C25.51 511.6 15.73 514.3 8.06 509.9C.3882 505.5-2.277 495.7 2.107 488.1L99.15 318.2C67.07 295.6 40.13 266.1 20.4 232C15.97 224.4 18.59 214.6 26.24 210.2C33.88 205.7 43.67 208.3 48.1 215.1C65.01 245.2 87.91 270.6 115.1 290.3L187.6 163.4C170.5 146.1 159.1 122.3 159.1 96C159.1 42.98 202.1 0 255.1 0C309 0 352 42.98 352 96C352 122.3 341.5 146.1 324.4 163.4L372.7 248.1C377.1 255.7 374.5 265.5 366.8 269.9C359.1 274.3 349.3 271.6 344.1 263.9L298.3 182.2zM255.1 32C220.7 32 191.1 60.65 191.1 96C191.1 131.3 220.7 160 255.1 160C291.3 160 320 131.3 320 96C320 60.65 291.3 32 255.1 32zM408.1 375.9C404.6 368.3 407.2 358.5 414.9 354.1C422.6 349.7 432.4 352.4 436.7 360.1L509.9 488.1C514.3 495.7 511.6 505.5 503.9 509.9C496.3 514.3 486.5 511.6 482.1 503.9L408.1 375.9z"/></svg>
+          <br>
+          Security
+      </p>
+  </div>
+
+  <div class="column-row">
+      <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M298.3 182.2C285.5 188.5 271.2 192 255.1 192C240.8 192 226.5 188.5 213.7 182.2L142.2 307.4C176.1 325.6 214.8 336 255.1 336C344.8 336 422.4 287.8 463.9 215.1C468.3 208.3 478.1 205.7 485.8 210.2C493.4 214.6 496 224.4 491.6 232C444.6 313.3 356.7 368 255.1 368C209 368 164.9 356.1 126.3 335.2L29.89 503.9C25.51 511.6 15.73 514.3 8.06 509.9C.3882 505.5-2.277 495.7 2.107 488.1L99.15 318.2C67.07 295.6 40.13 266.1 20.4 232C15.97 224.4 18.59 214.6 26.24 210.2C33.88 205.7 43.67 208.3 48.1 215.1C65.01 245.2 87.91 270.6 115.1 290.3L187.6 163.4C170.5 146.1 159.1 122.3 159.1 96C159.1 42.98 202.1 0 255.1 0C309 0 352 42.98 352 96C352 122.3 341.5 146.1 324.4 163.4L372.7 248.1C377.1 255.7 374.5 265.5 366.8 269.9C359.1 274.3 349.3 271.6 344.1 263.9L298.3 182.2zM255.1 32C220.7 32 191.1 60.65 191.1 96C191.1 131.3 220.7 160 255.1 160C291.3 160 320 131.3 320 96C320 60.65 291.3 32 255.1 32zM408.1 375.9C404.6 368.3 407.2 358.5 414.9 354.1C422.6 349.7 432.4 352.4 436.7 360.1L509.9 488.1C514.3 495.7 511.6 505.5 503.9 509.9C496.3 514.3 486.5 511.6 482.1 503.9L408.1 375.9z"/></svg>
+          <br>
+          Utility
+      </p>
+  </div>
+
+  <div class="column-row">
+    <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zm96 96c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32zm96 64H352c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32s14.3-32 32-32zm160 96h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+        <br>
+          Empowering
+      </p>
+  </div>
+
+            <div class="column-row">
+    <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M32 32c17.7 0 32 14.3 32 32V400c0 8.8 7.2 16 16 16H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H80c-44.2 0-80-35.8-80-80V64C0 46.3 14.3 32 32 32zm96 96c0-17.7 14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32H160c-17.7 0-32-14.3-32-32zm96 64H352c17.7 0 32 14.3 32 32s-14.3 32-32 32H224c-17.7 0-32-14.3-32-32s14.3-32 32-32zm160 96h64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>
+        <br>
+          GRANT
+      </p>
+  </div>
+</div>
+<!------------End-------------->
+    </div>
+  </div>
+<!----------Separator----------->
+   <div class="column">
+    <div class="card">
+<!------------Begin-------------->
+        <div class="row-columns">
+  <div class="column-row">
+    <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64.7 125.8l53.2 31.9c7.8 4.7 17.8 2 22.2-5.9L217.6 12.1c3-5.4-.9-12.1-7.1-12.1c-1.6 0-3.2 .5-4.6 1.4L63.9 98.8c-9.6 6.6-9.2 20.9 .8 26.9zM32 171.7V295.3c0 8 10.4 11 14.7 4.4l60-92c5-7.6 2.6-17.8-5.2-22.5L56.2 158C45.6 151.6 32 159.3 32 171.7zM326.4 12.1l77.6 139.6c4.4 7.9 14.5 10.6 22.2 5.9l53.2-31.9c10-6 10.4-20.3 .8-26.9L338.1 1.4c-1.4-.9-3-1.4-4.6-1.4c-6.2 0-10.1 6.7-7.1 12.1zM512 171.7c0-12.4-13.6-20.1-24.2-13.7l-45.3 27.2c-7.8 4.7-10.1 14.9-5.2 22.5l60 92c4.3 6.7 14.7 3.6 14.7-4.4V171.7zm-49.3 246L302.1 436.6c-8.1 .9-14.1 7.8-14.1 15.9v52.8c0 3.7 3 6.8 6.8 6.8c.8 0 1.6-.1 2.4-.4l172.7-64c6.1-2.2 10.1-8 10.1-14.5c0-9.3-8.1-16.5-17.3-15.4zM249.2 512c3.7 0 6.8-3 6.8-6.8V452.6c0-8.1-6.1-14.9-14.1-15.9l-160.6-19c-9.2-1.1-17.3 6.1-17.3 15.4c0 6.5 4 12.3 10.1 14.5l172.7 64c.8 .3 1.6 .4 2.4 .4zM57.7 382.9l170.9 20.2c7.8 .9 13.4-7.5 9.5-14.3l-85.7-150c-5.9-10.4-20.7-10.8-27.3-.8L46.2 358.2c-6.5 9.9-.3 23.3 11.5 24.7zm439.6-24.8L418.9 238.1c-6.5-10-21.4-9.6-27.3 .8L306.2 388.5c-3.9 6.8 1.6 15.2 9.5 14.3l170.1-20c11.8-1.4 18-14.7 11.5-24.6zm-216.9 11l78.4-137.2c6.1-10.7-1.6-23.9-13.9-23.9H199.1c-12.3 0-20 13.3-13.9 23.9l78.4 137.2c3.7 6.4 13 6.4 16.7 0zM190.4 176H353.6c12.2 0 19.9-13.1 14-23.8l-80-144c-2.8-5.1-8.2-8.2-14-8.2h-3.2c-5.8 0-11.2 3.2-14 8.2l-80 144c-5.9 10.7 1.8 23.8 14 23.8z"/></svg>
+        <br>
+          LAUNCH
+      </p>
+  </div>
+
+          <div class="column-row">
+    <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64.7 125.8l53.2 31.9c7.8 4.7 17.8 2 22.2-5.9L217.6 12.1c3-5.4-.9-12.1-7.1-12.1c-1.6 0-3.2 .5-4.6 1.4L63.9 98.8c-9.6 6.6-9.2 20.9 .8 26.9zM32 171.7V295.3c0 8 10.4 11 14.7 4.4l60-92c5-7.6 2.6-17.8-5.2-22.5L56.2 158C45.6 151.6 32 159.3 32 171.7zM326.4 12.1l77.6 139.6c4.4 7.9 14.5 10.6 22.2 5.9l53.2-31.9c10-6 10.4-20.3 .8-26.9L338.1 1.4c-1.4-.9-3-1.4-4.6-1.4c-6.2 0-10.1 6.7-7.1 12.1zM512 171.7c0-12.4-13.6-20.1-24.2-13.7l-45.3 27.2c-7.8 4.7-10.1 14.9-5.2 22.5l60 92c4.3 6.7 14.7 3.6 14.7-4.4V171.7zm-49.3 246L302.1 436.6c-8.1 .9-14.1 7.8-14.1 15.9v52.8c0 3.7 3 6.8 6.8 6.8c.8 0 1.6-.1 2.4-.4l172.7-64c6.1-2.2 10.1-8 10.1-14.5c0-9.3-8.1-16.5-17.3-15.4zM249.2 512c3.7 0 6.8-3 6.8-6.8V452.6c0-8.1-6.1-14.9-14.1-15.9l-160.6-19c-9.2-1.1-17.3 6.1-17.3 15.4c0 6.5 4 12.3 10.1 14.5l172.7 64c.8 .3 1.6 .4 2.4 .4zM57.7 382.9l170.9 20.2c7.8 .9 13.4-7.5 9.5-14.3l-85.7-150c-5.9-10.4-20.7-10.8-27.3-.8L46.2 358.2c-6.5 9.9-.3 23.3 11.5 24.7zm439.6-24.8L418.9 238.1c-6.5-10-21.4-9.6-27.3 .8L306.2 388.5c-3.9 6.8 1.6 15.2 9.5 14.3l170.1-20c11.8-1.4 18-14.7 11.5-24.6zm-216.9 11l78.4-137.2c6.1-10.7-1.6-23.9-13.9-23.9H199.1c-12.3 0-20 13.3-13.9 23.9l78.4 137.2c3.7 6.4 13 6.4 16.7 0zM190.4 176H353.6c12.2 0 19.9-13.1 14-23.8l-80-144c-2.8-5.1-8.2-8.2-14-8.2h-3.2c-5.8 0-11.2 3.2-14 8.2l-80 144c-5.9 10.7 1.8 23.8 14 23.8z"/></svg>
+        <br>
+          LAUNCH
+      </p>
+  </div>
+
+  <div class="column-row">
+      <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M148 76.6C148 34.3 182.3 0 224.6 0c20.3 0 39.8 8.1 54.1 22.4l9.3 9.3 9.3-9.3C311.6 8.1 331.1 0 351.4 0C393.7 0 428 34.3 428 76.6c0 20.3-8.1 39.8-22.4 54.1L302.1 234.1c-7.8 7.8-20.5 7.8-28.3 0L170.4 130.7C156.1 116.4 148 96.9 148 76.6zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg>
+          <br>
+          DOA
+      </p>
+  </div>
+
+    <div class="column-row">
+      <p class="categories">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M148 76.6C148 34.3 182.3 0 224.6 0c20.3 0 39.8 8.1 54.1 22.4l9.3 9.3 9.3-9.3C311.6 8.1 331.1 0 351.4 0C393.7 0 428 34.3 428 76.6c0 20.3-8.1 39.8-22.4 54.1L302.1 234.1c-7.8 7.8-20.5 7.8-28.3 0L170.4 130.7C156.1 116.4 148 96.9 148 76.6zM568.2 336.3c13.1 17.8 9.3 42.8-8.5 55.9L433.1 485.5c-23.4 17.2-51.6 26.5-80.7 26.5H192 32c-17.7 0-32-14.3-32-32V416c0-17.7 14.3-32 32-32H68.8l44.9-36c22.7-18.2 50.9-28 80-28H272h16 64c17.7 0 32 14.3 32 32s-14.3 32-32 32H288 272c-8.8 0-16 7.2-16 16s7.2 16 16 16H392.6l119.7-88.2c17.8-13.1 42.8-9.3 55.9 8.5zM193.6 384l0 0-.9 0c.3 0 .6 0 .9 0z"/></svg>
+          <br>
+          DOA
+      </p>
+  </div>
+
+</div>
+<!------------End-------------->
+    </div>
+  </div>
+</div>
+<!-----------
+======================
+Ecosystem Code End
+======================
+------------->
+     <div class="header-large">
+  <p class="center-paragraph">
+   The open community to revolutionize the design industry by creating
+        a more collaborative, inclusive, and innovative community of
+        designers. It will allow designers to break down barriers and
+        work together to create amazing designs that solve real-world
+        problems and inspire others.
+  </p>
+</div>
+</section>
+<!-----
+==================
+END ABOUT Code
+==================
+------->
+	
+	
+	
+	
+	
 
 
 
